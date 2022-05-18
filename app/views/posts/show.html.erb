@@ -1,0 +1,38 @@
+<div class="main_container">
+    <h2>スケジュール詳細</h2>
+
+    <table class="show_table">
+        <tbody>
+            <tr>
+                <th>タイトル</th>
+                <td><%= @post.title %></td>
+            </tr>
+            <tr>
+                <th>開始日</th>
+                <td><%= @post.start_date.strftime("%Y年%m月%d日") %></td>
+            </tr>
+            <tr>
+                <th>投稿日時</th>
+                <td><%= @post.created_at.strftime("%Y年%m月%d日") %></td>
+            </tr>
+            <tr>
+                <th>終日</th>
+                <td><%if @post.is_all_day %>
+                    <%="○"%>
+                    <%end%>
+                </td>
+            </tr>
+            <tr>
+                <th>スケジュールメモ</th>
+                <td><%= @post.memo_text %></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li><%= link_to "スケジュール一覧に戻る", :posts %></li>
+        <li><%= link_to "スケジュールを編集", edit_post_path %></li>
+        <li><%= button_to "削除", post_path, method: :delete %></li> <%# link_toだと動かなかった %>
+    </ul>
+
+</div>
