@@ -2,8 +2,7 @@ class Post < ApplicationRecord
   validates :title, presence: true
   validates :start_date, presence: true
   validates :end_date, presence: true
-  validates :memo_text, presence: true
-
+  validates :memo_text, presence: true,length: { maximum: 140 }
   validate :date_before_start
   validate :date_before_end
 

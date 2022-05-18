@@ -34,7 +34,7 @@ class PostsController < ApplicationController
     else
       flash[:alert] = "編集に失敗しました"
       render :edit, status: :unprocessable_entity
-      
+
     end
   end
 
